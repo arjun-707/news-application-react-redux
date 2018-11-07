@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App].
 
 ## About
-This project is a single page application developed in ReactJS. This application contains popular news sources,news headlines, images, published data, description, etc.
+This project is a single page application developed in ReactJS and Redux. This application contains popular news sources,news headlines, images, published data, description, etc.
 
 ## Available Scripts
 
