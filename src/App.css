@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  font-size: 16px;
+}
+.source {
+  float: left;
+  width: 100%; 
+}
+.source-list, .news-list-table {
+  text-align: left; 
+  height: 500px;
+  overflow-y: scroll;
+}
+.source-list, .news-list-table {
+  text-align: left; 
+}
+.source-news-table, .headline-list-table {
+  height: 610px;
+  overflow-y: scroll;
+}
+.source-list .news-source {
+  width: 250px !important;
+  text-align: left;
+}
+.news-img {
+  height: 80px;
+  width: 100px;
+}
+.desc-img {
+  height: 235px;
+  width: 430px;
+}
+.news-list-table tbody h3,
+.news-list-table tbody img,
+.news-list-table tbody .glyphicon {
+  cursor: pointer;
+}
+.glyphicon-star {
+  float: right;
+  font-size: 16px;
+}
+.glyphicon-star:hover, .star-green{
+  color:rgb(12, 141, 34);
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
