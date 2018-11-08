@@ -64,7 +64,7 @@ class NewsList extends Component {
             <div className="col-md-9 news-list">
                 <div className="row">
                     {   
-                        (this.props.news_list.length > 0) ?
+                        (this.props.news_list.length > 0 && !this.props.wait) ?
                             <div className="col-md-6 headline-list-table">
                                 <table className="table table-striped news-list-table">
                                     <thead>
