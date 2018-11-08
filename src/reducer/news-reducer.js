@@ -2,7 +2,7 @@ const initialState = {
     list: [],
     news_list: [],
     selected_list: '',
-    wait: false,
+    wait: true,
     data: {},    
     title: '',
     description: '',
@@ -17,14 +17,15 @@ const newsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 list: action.list,
-                data: action.data
+                data: action.data,
+                wait: false
             };
         case 'news_list': 
             return {
                 ...state,
                 news_list: action.news_list, 
                 selected_list: action.selected_list, 
-                wait: action.wait, 
+                wait: false, 
                 data: action.data,
                 id:  action.id
             };
@@ -42,7 +43,7 @@ const newsReducer = (state = initialState, action) => {
                 img:  action.img,
                 favorite: action.favorite
             };
-        case 'wait': 
+        case 'loading': 
             return {
                 ...state,
                 wait: action.wait

@@ -13,7 +13,8 @@ class NewsList extends Component {
         this.getPublishedDateTime = this.getPublishedDateTime.bind(this)
         this.showDescription = this.showDescription.bind(this)
     }
-    showDescription(event) {
+    showDescription(event) {        
+        this.props.loading()
         let source = event.target.attributes[1].nodeValue;
         let id = event.target.id;
         this.props.showNewsDescription(this.props.data[source], source+id)

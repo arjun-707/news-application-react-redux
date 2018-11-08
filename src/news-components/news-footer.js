@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class NewsFooter extends Component {
     render() {
         return (
-            <div class="footer">
+            <div className="footer">
                 <p>Favorites : {this.props.favorite_count}</p>
             </div>
         )

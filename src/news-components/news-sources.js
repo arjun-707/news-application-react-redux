@@ -17,37 +17,40 @@ class NewsSource extends Component {
         this.getNews = this.getNews.bind(this);
     }
     getNews(event) {
+        this.props.loading()
         this.props.fetchNews({id: event.target.id, text: event.target.innerHTML, input: this.props.data});
     }
     render() {
-        const SOURCES = this.props.list.length > 0 ?
-            this.props.list.map((data, index) => {
-                return <tr key={index}>
-                    <td>
-                        <button className="btn btn-primary news-source" type="button"  onClick={this.getNews} id={data.id}>
-                            {data.name}
-                        </button>
-                    </td>
-                </tr>
-            })
+        const SOURCES = (this.props.list.length) > 0 ?
+                <table className="table source-list">
+                    <thead>
+                        <tr>
+                            
+                            <th id="all-sources">All Sources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.props.list.map((data, index) => {
+                                return <tr key={index}>
+                                    <td>
+                                        <button className="btn btn-primary news-source" type="button"  onClick={this.getNews} id={data.id}>
+                                            {data.name}
+                                        </button>
+                                    </td>
+                                </tr>
+                            })
+                        }
+                    </tbody>
+                </table>
             :
-            (this.props.wait) ?
-                <Loading/>
-            : ''
+                (this.props.wait) ?
+                    <Loading/>
+                : ''
         return (
             <div className="row source">
                 <div className="col-md-3 source-news-table">
-                    <table className="table source-list">
-                        <thead>
-                            <tr>
-                                
-                                <th id="all-sources">All Sources</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            { SOURCES }
-                        </tbody>
-                    </table>
+                    { SOURCES }
                 </div>
                 <NewsList/>
                 <NewsFooter/>

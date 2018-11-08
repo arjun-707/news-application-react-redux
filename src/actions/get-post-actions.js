@@ -42,8 +42,7 @@ export const fetchNews = (inputData) => dispatch => {
                 dispatch({
                     type: 'news_list',
                     news_list: response.articles, 
-                    selected_list: text, 
-                    wait:false,
+                    selected_list: text,
                     data: srcData,
                     id: id
                 })
