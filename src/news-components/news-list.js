@@ -33,6 +33,7 @@ class NewsList extends Component {
                                         src={data.urlToImage} 
                                         className="news-img" 
                                         onClick={this.showDescription}
+                                        alt="no pic avail"
                                     />
                                 :
                                 "no image"
@@ -90,7 +91,7 @@ class NewsList extends Component {
         );
     }
     getPublishedDateTime(inputDate) {
-        if (inputDate != undefined && inputDate != '') {
+        if (inputDate !== undefined && inputDate !== '') {
             let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
             let publDat = new Date(inputDate);
             let year = publDat.getFullYear();

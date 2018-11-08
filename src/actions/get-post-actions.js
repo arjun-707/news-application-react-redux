@@ -5,10 +5,10 @@ export const getNewsSources = () => dispatch => {
             response.json()
         )
         .then(async (response) => {
-            if (response.status == "ok") {
+            if (response.status === "ok") {
                 let sourcesData = {}
                 response.sources.map((data, index) => {
-                    sourcesData[data.id] = {}
+                    return sourcesData[data.id] = {}
                 })
                 dispatch({
                     type: 'source_list',
@@ -27,7 +27,7 @@ export const fetchNews = (inputData) => dispatch => {
             response.json()
         )
         .then((response) => {
-            if (response.status == "ok") {
+            if (response.status === "ok") {
                 let srcData = inputData.input;
                 response.articles.map((data, index) => {
                     if (!srcData[id].hasOwnProperty(id+index)) {
@@ -38,6 +38,8 @@ export const fetchNews = (inputData) => dispatch => {
                             favorite: false
                         };
                     }
+                    else
+                        return [];
                 });
                 dispatch({
                     type: 'news_list',
